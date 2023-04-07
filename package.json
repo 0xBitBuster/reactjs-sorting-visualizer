@@ -1,5 +1,5 @@
 {
-  "name": "sorting-visualizer",
+  "name": "reactjs-sorting-visualizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
+  },
+  "author": {
+    "name": "bananajoey88"
   },
   "dependencies": {
     "react": "^18.2.0",
