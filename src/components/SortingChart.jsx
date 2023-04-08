@@ -11,7 +11,7 @@ function SortingChart() {
     }, []);
 
     return (
-        <div className="mt-4 flex flex-col items-center">
+        <div className="mt-4 mb-4 flex flex-col items-center">
             <img src="/logo.png" className="max-w-lg mb-6 w-full" />
             
             <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -102,32 +102,38 @@ function SortingChart() {
                     <p className="whitespace-pre-line mb-6">{algorithmInfos[sortingState.algorithm].description}</p>
                     <div className="w-full h-0.5 bg-carbon-light mb-6" />
                     
-                    <table className="table-auto w-full text-left">
-                        <tr>
-                            <th className="px-4 border-r border-carbon-light" rowspan="2">
-                                Algorithm
-                            </th>
-                            <th className="px-4 border-r border-carbon-light" colspan="3">
-                                Time Complexity
-                            </th>
-                            <th className="px-4">Space Complexity</th>
-                        </tr>
-                        <tr className="border-b border-carbon-light">
-                            <th className="px-4 pb-2">Best</th>
-                            <th className="px-4 pb-2">Average</th>
-                            <th className="px-4 pb-2 border-r border-carbon-light">Worst</th>
-                            <th className="px-4 pb-2">Worst</th>
-                        </tr>
-                        {Object.keys(algorithmInfos).map((key, i) => (
-                            <tr className="hover:bg-carbon-light">
-                                <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""} border-r border-carbon-light`}>{algorithmInfos[key].name}</td>
-                                <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.best[1]}`}>{algorithmInfos[key].time_complexity.best[0]}</span></td>
-                                <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.average[1]}`}>{algorithmInfos[key].time_complexity.average[0]}</span></td>
-                                <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""} border-r border-carbon-light`}><span className={`px-1 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.worst[1]}`}>{algorithmInfos[key].time_complexity.worst[0]}</span></td>
-                                <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1 py-0.5 rounded-md bg-${algorithmInfos[key].space_complexity[1]}`}>{algorithmInfos[key].space_complexity[0]}</span></td>
-                            </tr>
-                        ))}
-                    </table>
+                    <div className="overflow-auto">
+                        <table className="w-full text-left">
+                            <thead>
+                                <tr>
+                                    <th className="px-4 border-r border-carbon-light" rowSpan={2}>
+                                        Algorithm
+                                    </th>
+                                    <th className="px-4 border-r border-carbon-light" colSpan={3}>
+                                        Time Complexity
+                                    </th>
+                                    <th className="px-4">Space Complexity</th>
+                                </tr>
+                                <tr className="border-b border-carbon-light">
+                                    <th className="px-4 pb-2">Best</th>
+                                    <th className="px-4 pb-2">Average</th>
+                                    <th className="px-4 pb-2 border-r border-carbon-light">Worst</th>
+                                    <th className="px-4 pb-2">Worst</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {Object.keys(algorithmInfos).map((key, i) => (
+                                    <tr key={i} className="hover:bg-carbon-light whitespace-nowrap">
+                                        <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""} border-r border-carbon-light`}>{algorithmInfos[key].name}</td>
+                                        <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1.5 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.best[1]}`}>{algorithmInfos[key].time_complexity.best[0]}</span></td>
+                                        <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1.5 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.average[1]}`}>{algorithmInfos[key].time_complexity.average[0]}</span></td>
+                                        <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""} border-r border-carbon-light`}><span className={`px-1.5 py-0.5 rounded-md bg-${algorithmInfos[key].time_complexity.worst[1]}`}>{algorithmInfos[key].time_complexity.worst[0]}</span></td>
+                                        <td className={`px-4 py-1 ${i === 0 ? "pt-2" : ""}`}><span className={`px-1.5 py-0.5 rounded-md bg-${algorithmInfos[key].space_complexity[1]}`}>{algorithmInfos[key].space_complexity[0]}</span></td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
