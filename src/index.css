@@ -108,3 +108,14 @@ body {
         transform: scaleY(0.6);
     }
 }
+
+@media screen and (max-width: 450px) {
+    .bar-container {
+        margin: 0 3px;
+        transform: scaleX(0.4)
+    }
+
+    .bar-container p {
+        transform: scaleY(0.4);
+    }
+}
