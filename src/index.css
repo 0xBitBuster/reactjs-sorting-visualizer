@@ -110,6 +110,10 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+    .chart-container {
+        height: 200px;
+    }
+    
     .bar-container {
         margin: 0 3px;
         transform: scaleX(0.4)
