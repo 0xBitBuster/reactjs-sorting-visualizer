@@ -7,7 +7,7 @@ This project is a React.js (Vite) web application that allows users to visualize
 
 <a href="https://reactjs-sorting-visualizer.vercel.app">View Demo</a>
 
-## Algorithms
+## Features
 
 -  [x]  **Various Algorithms**: Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort and Radix Sort
 
