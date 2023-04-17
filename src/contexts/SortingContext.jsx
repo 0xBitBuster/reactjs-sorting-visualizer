@@ -166,7 +166,6 @@ function SortingProvider({ children }) {
 
         for (let i = start; i <= end; i++) {
             changeBar(i, { value: arr[i], state: "idle" });
-            await awaitTimeout(sortingState.delay);
         }
     }
 
